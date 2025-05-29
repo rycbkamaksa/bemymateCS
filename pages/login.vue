@@ -62,7 +62,7 @@ const loginState = reactive({
       : `Продолжить как ${loginState.user.nickname}`
   ),
 })
-
+console.log('clientId =', clientId)
 const loginLink =
   'https://accounts.faceit.com/?' +
   `client_id=${clientId}` +
