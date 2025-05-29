@@ -4,13 +4,13 @@ export default defineNuxtConfig({
   // ТК это креды от тестинга, ничего страшного, что они в открытую лежат,
   // на проде это всё заменится продовыми через переменные окружения
   runtimeConfig: {
-    clientSecret: '7uGxzvJbIk8aoIvFuXkqitbz1Zg3Pw90dZUGTebn',
-    api_key: 'ca4504fa-e1fd-45bc-8334-7e7f79d748f0',
-    dbUrl: 'mongodb://root:example@localhost:27017/',
+    clientSecret: process.env.CLIENT_SECRET || '',
+    api_key: process.env.API_KEY || '',
+    dbUrl: process.env.NUXT_DB_URL || '', // Railway подставит переменную окружения!
     public: {
-      searchHost: 'localhost:5176',
-      clientId: '5d6ba553-3a2b-493f-8ba7-ecd1c541c4ce',
-      landing_mode: false,
+      searchHost: process.env.NUXT_PUBLIC_SEARCH_HOST || '', // Railway подставит здесь твой адрес!
+      clientId: process.env.CLIENT_ID || '',
+      landing_mode: process.env.LANDING_MODE === 'true',
     },
   },
 
